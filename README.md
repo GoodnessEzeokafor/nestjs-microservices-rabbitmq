@@ -6,11 +6,11 @@
 
 # Basic documentation
 
-## Postgres with Docker
-> Up an image and run postgres image with docker
+## rabbitmq with Docker
+> Up an image and run rabbitmq image with docker
 
 ```sh
-docker run --name db_pg -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres:11
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management
 ```
 
 ## Environment variables
@@ -18,12 +18,6 @@ docker run --name db_pg -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_U
 > Create a `.env` file in the root directory of your project
 
 ```dotenv
-POSTGRES_DATABASE="postgres"
-POSTGRES_HOST="127.0.0.1"
-POSTGRES_USER="postgres"
-POSTGRES_PASSWORD="postgres"
-POSTGRES_PORT=5432
-
 PORT=3333
 APP_SECRET='senhona_grossa'
 MODE="DEV"
