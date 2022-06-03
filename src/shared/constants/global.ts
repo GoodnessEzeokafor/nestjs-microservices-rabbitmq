@@ -1,8 +1,7 @@
 import dotenv from 'dotenv';
+import { configService } from '../../infra/application/application.config';
 
 dotenv.config();
 
-const CURRENCY_CODE_BRL = 986;
-const APP_SECRET: string = process.env.APP_SECRET;
-
-export { CURRENCY_CODE_BRL, APP_SECRET };
+export const PORT = configService.getPort() || 3000;
+export const APP_SECRET: string = process.env.APP_SECRET;

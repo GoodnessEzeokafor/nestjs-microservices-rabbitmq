@@ -17,7 +17,7 @@ describe('AppController (e2e)', () => {
 
     it('/status (GET)', () => {
         return request(app.getHttpServer()).get('/status').expect(200).expect({
-            name: 'nestjs-rest-boilerplate',
+            name: 'nestjs-microservices-rabbitmq',
             version: '0.0.1',
             creator: 'Hebert Barros <hebert@hotbrains.com.br>',
             status: 'online',

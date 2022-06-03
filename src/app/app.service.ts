@@ -9,7 +9,7 @@ type TInfo = {
 export class AppService {
     info(): TInfo {
         return {
-            name: 'nestjs-rest-boilerplate',
+            name: 'nestjs-microservices-rabbitmq',
             version: '0.0.1',
             creator: 'Hebert Barros <hebert@hotbrains.com.br>',
             status: 'online',
