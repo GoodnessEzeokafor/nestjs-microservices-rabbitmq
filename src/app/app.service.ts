@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-type TInfo = {
+type InfoType = {
     name: string;
     version: string;
     creator: string;
@@ -7,7 +7,7 @@ type TInfo = {
 };
 @Injectable()
 export class AppService {
-    info(): TInfo {
+    info(): InfoType {
         return {
             name: 'nestjs-microservices-rabbitmq',
             version: '0.0.1',

@@ -1,6 +1,5 @@
-const fs = require('fs');
-const { join } = require('path');
-const { execSync } = require('child_process');
+const { join } = require('node:path');
+const { execSync } = require('node:child_process');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -9,8 +8,6 @@ const directoryToWork = `${join(__dirname, '..')}`;
 
 execSync(`cp ${directoryToWork}/.env.example ${directoryToWork}/.env`);
 
-const { POSTGRES_PASSWORD, POSTGRES_USER } = process.env;
-
 execSync(
-    `docker run --name db_pg -p 5432:5432 -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} -d postgres:11`,
+    `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management`,
 );
