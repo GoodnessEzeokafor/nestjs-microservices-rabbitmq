@@ -6,14 +6,6 @@
     "private": true,
     "license": "UNLICENSED",
     "scripts": {
-        "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
-        "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
-        "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
-        "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
-        "setup": "cp .env.example .env",
-        "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-        "typeorm:migration:run": "npm run typeorm -- migration:run",
-        "pretypeorm": "ts-node -r tsconfig-paths/register src/scripts/write-type-orm-config.ts",
         "prebuild": "rimraf dist",
         "build": "nest build",
         "run:pm2": "pm2 start ts-node -- -P tsconfig.json ./src/main.ts",
@@ -30,13 +22,7 @@
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./test/jest-e2e.json",
-        "git:ruf": "git reset --hard HEAD",
-        "git:pull": "git pull",
-        "kill:node": "kill -9 $(sudo lsof -t -i:3333)",
-        "clear": "clear",
-        "audit:fix": "npm audit fix",
-        "prepare:enviroment": "node scripts/dev-enviroment.cjs",
-        "prepostprepare:enviroment": "npm run pretypeorm"
+        "prepare:enviroment": "node scripts/dev-enviroment.cjs"
     },
     "dependencies": {
         "@nestjs/common": "8.4.6",
