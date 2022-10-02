@@ -1,24 +1,25 @@
+#!/usr/bin/env node
 import 'reflect-metadata';
 
-import dotenv from 'dotenv';
+import 'dotenv/config';
 
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions } from '@nestjs/microservices';
 
 import { AppModule } from './app/app.module';
-import { amqpClientOptions } from './amqp-client.options';
+import { amqpClientOptions } from './infra/microservices/amqp/amqp-client.options';
 import { PORT } from './shared/constants/global';
-
-dotenv.config();
+import { Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
-    const app = await NestFactory.create(AppModule);
-
-    app.enableCors();
-
-    app.connectMicroservice<MicroserviceOptions>(amqpClientOptions);
-
-    await app.listen(PORT);
+    const app = await NestFactory.createMicroservice<MicroserviceOptions>(
+        AppModule,
+        {
+            transport: Transport.RMQ,
+            options: { ...amqpClientOptions },
+        },
+    );
+    await app.listen();
 }
 
 ((): void => {
