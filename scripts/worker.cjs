@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 require('dotenv/config');
 
 require('amqplib/callback_api').connect(process.env.AMQP_URL, (error, conn) => {
