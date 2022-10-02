@@ -2,8 +2,6 @@
 
 [![Node.js CI](https://github.com/hebertcisco/nestjs-microservices-rabbitmq/actions/workflows/node.js.yml/badge.svg)](https://github.com/hebertcisco/nestjs-microservices-rabbitmq/actions/workflows/node.js.yml)
 
-[![Docker Image CI](https://github.com/hebertcisco/nestjs-microservices-rabbitmq/actions/workflows/docker-image.yml/badge.svg)](https://github.com/hebertcisco/nestjs-microservices-rabbitmq/actions/workflows/docker-image.yml)
-
 RabbitMQ is an open-source and lightweight message broker which supports multiple messaging protocols.
 
 # Basic documentation
