@@ -16,26 +16,6 @@ RabbitMQ is an open-source and lightweight message broker which supports multipl
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management
 ```
 
-## Environment variables
-
-> Create a `.env` file in the root directory of your project
-
-```dotenv
-# APP CONFIGURATION
-PORT=3333              # default port to listen
-NODE_ENV="development" #development or production
-
-# RABBITMQ CONFIGURATION
-AMQP_HOST=localhost                                    # rabbitmq host
-AMQP_PORT=1883                                         # rabbitmq port
-AMQP_USER=A134A5:A134A5                                # rabbitmq user
-AMQP_PASSWORD=5TR0ng-p4sSwd                            # rabbitmq password
-AMQP_URL=amqps://A134A5:5TR0ng-p4sSwd@localhost/A134A5 # rabbitmq url
-AMQP_QUEUE=example_queue                               # rabbitmq queue
-AMQP_VHOST=A134A5                                      # rabbitmq vhost
-
-```
-
 ## Runing the application with docker
 
 ### Run as dev
