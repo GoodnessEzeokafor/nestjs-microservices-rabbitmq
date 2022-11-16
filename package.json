@@ -71,7 +71,7 @@
         "eslint-plugin-prettier": "4.0.0",
         "jest": "28.1.0",
         "nodemon": "2.0.16",
-        "pm2": "5.2.0",
+        "pm2": "5.2.2",
         "prettier": "2.6.2",
         "sucrase": "3.21.0",
         "supertest": "6.2.3",
